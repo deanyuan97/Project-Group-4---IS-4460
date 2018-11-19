@@ -36,7 +36,7 @@
 
 	<main class="container-slim text-left">
 		<h1>Buyer Homepage</h1>
-		<p><a href="paymentupdate.html">Update Billing</a> | <a href="buyeredit.html">Edit Account Details</a> | <a href="buyerdelete.html">Delete Account</a></p>
+		<p><a href="paymentupdate.php">Update Billing</a> | <a href="buyeredit.php">Edit Account Details</a> | <a href="buyerdelete.php">Delete Account</a></p>
 		<form>
 			<h3>Create Account</h3>
 						First Name:

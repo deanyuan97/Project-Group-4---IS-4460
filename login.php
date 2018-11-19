@@ -1,7 +1,7 @@
 <?php
 
 $hn = 'localhost';
-$db = 'outddor';
+$db = 'outdoor';
 $un = 'root';
 $pw = '';
 

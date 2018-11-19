@@ -105,9 +105,9 @@ body {
       background-color: #66ccff;
       color: #fff;
   }
-  .navbar {
+    .navbar {
       margin-bottom: 0;
-      background-color: #abb7b8;
+      background-color: #03a01f;
       z-index: 9999;
       border: 0;
       font-size: 12px !important;
@@ -115,12 +115,12 @@ body {
       letter-spacing: 4px;
       border-radius: 0;
       font-family: Montserrat, sans-serif;
-  }
-  .navbar li a, .navbar .navbar-brand {
+    }
+      .navbar li a, .navbar .navbar-brand {
       color: #fff !important;
   }
   .navbar-nav li a:hover, .navbar-nav li.active a {
-      color: #66ccff !important;
+      color: #f4511e !important;
       background-color: #fff !important;
   }
   .navbar-default .navbar-toggle {

@@ -48,7 +48,7 @@
 						Password:
 						<input type="password" name="Password"><br>
 						Confirm Password:
-						<input type="text" name="CPassword"><br>
+						<input type="password" name="CPassword"><br>
 						Phone:
 						<input type="text" name="Phone"><br>
 						Billing Address:

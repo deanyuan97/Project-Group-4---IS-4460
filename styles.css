@@ -30,7 +30,7 @@ body {
     width: 50%;
     margin: 0 auto;
   }
-  .container-slim input[type='text'] {
+  .container-slim input[type='text'], .container-slim input[type='password'] {
     width: 100%;
   }
   .container-slim input[type='submit'] {

@@ -42,7 +42,7 @@
 			Username:
 			<input type="text" name="Username"><br>
 			Password:
-			<input type="text" name="Password"><br>
+			<input type="password" name="Password"><br>
 			<input type="submit" value="Delete Account">
 	</form>
 </body>

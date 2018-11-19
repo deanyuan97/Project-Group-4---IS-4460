@@ -16,7 +16,7 @@ body {
       color: #303030;
       font-weight: 400;
       margin-bottom: 30px;
-  }  
+  }
   .jumbotron {
       background-color: #e6f7ff;
       color: #303030;
@@ -25,6 +25,16 @@ body {
   }
   .container-fluid {
       padding: 60px 50px;
+  }
+  .container-slim {
+    width: 50%;
+    margin: 0 auto;
+  }
+  .container-slim input[type='text'] {
+    width: 100%;
+  }
+  .container-slim input[type='submit'] {
+    float: right;
   }
   .bg-grey {
       background-color: #f6f6f6;
@@ -68,7 +78,7 @@ body {
       font-style: normal;
   }
   .panel {
-      border: 1px solid #66ccff; 
+      border: 1px solid #66ccff;
       border-radius:0 !important;
       transition: box-shadow 0.5s;
   }
@@ -144,7 +154,7 @@ body {
     0% {
       opacity: 0;
       transform: translateY(70%);
-    } 
+    }
     100% {
       opacity: 1;
       transform: translateY(0%);
@@ -154,7 +164,7 @@ body {
     0% {
       opacity: 0;
       -webkit-transform: translateY(70%);
-    } 
+    }
     100% {
       opacity: 1;
       -webkit-transform: translateY(0%);

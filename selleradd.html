@@ -1,29 +1,55 @@
 <!doctype html>
 <html>
-<center>
 <head>
 <meta charset="UTF-8">
-<title>Outdoor Swap Add</title>
-	<link rel="stylesheet" href="styles.css">
+<title>Seller Add Page</title>
+	<link rel='stylesheet' href="styles.css">
+
+	<!-- Boot Strap Links -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="styles.css" >
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 </head>
 
-<body>
-	<h1>Outdoor Swap</h1>
-	<p>Seller Add Page</p>
-	
-	<!--Add New Item Form-->
-	<p><form>
-      Item Name: <br>
-      <input type="text" name="itemname"> <br>
-      Description: <br>
-      <input type="text" name="description"> <br>
-	  Price: <br>
-      <input type="text" name="price"> <br><br>
-      <input type="submit" value="OK">
-    </form></p>
-	
-	<!--Seller View Link-->
-	<p><a href="SellerView.html">Seller Home</a></p>
+<body style = "background-color: lightgray;">
+
+	<!-- Navbar -->
+	<nav class="navbar navbar-default">
+		<div class="container">
+		<div class="navbar-header">
+			 <a class="navbar-brand" href="#myPage">Outdoor Swap <span class="glyphicon glyphicon-leaf"></span></a>
+		</div>
+		<div class="collapse navbar-collapse" id="myNavbar">
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="#login">LOGIN</a></li>
+			<li><a href="#listings">LISTINGS</a></li>
+			<li><a href="#services">SERVICES</a></li>
+			<li><a href="#subsciption">SUBSCRIPTION</a></li>
+			<li><a href="#contact">CONTACT</a></li>
+			<li><a href="#about">ABOUT</a></li>
+			</ul>
+		</div>
+		</div>
+	</nav>
+
+	<main class="container-slim text-left">
+		<h1>Seller - Add</h1>
+
+		<!--Add New Item Form-->
+		<form>
+	      Item Name: <br>
+	      <input type="text" name="itemname"> <br>
+	      Description: <br>
+	      <input type="text" name="description"> <br>
+		  Price: <br>
+	      <input type="text" name="price"> <br><br>
+	      <input type="submit" value="OK">
+		</form>
+
+		<!--Seller View Link-->
+		<p><a href="SellerView.html">Seller Home</a></p>
+	</main>
 </body>
-</center>
 </html>

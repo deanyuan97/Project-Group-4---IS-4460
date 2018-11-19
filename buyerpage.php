@@ -36,8 +36,8 @@
 
 	<main class="container-slim text-left">
 		<h1>Buyer Homepage</h1>
-		<p><a href="paymentupdate.php">Update Billing</a> | <a href="buyeredit.php">Edit Account Details</a> | <a href="buyerdelete.php">Delete Account</a></p>
-		<form>
+		<p><a href="paymentupdate.html">Update Billing</a> | <a href="buyeredit.html">Edit Account Details</a> | <a href="buyerdelete.html">Delete Account</a></p>
+		<form method='post' action='buyerpage.php'>
 			<h3>Create Account</h3>
 						First Name:
 						<input type="text" name="firstname"><br>
@@ -46,9 +46,9 @@
 						Username:
 						<input type="text" name="Username"><br>
 						Password:
-						<input type="password" name="Password"><br>
+						<input type="text" name="Password"><br>
 						Confirm Password:
-						<input type="password" name="CPassword"><br>
+						<input type="text" name="CPassword"><br>
 						Phone:
 						<input type="text" name="Phone"><br>
 						Billing Address:
@@ -69,6 +69,27 @@ require_once 'login.php';
 $conn = new mysqli($hn, $un, $pw, $db);
 if ($conn->connect_error) die("Fatal Error");
 
+if(isset($_POST['firstname']))
+{
+	$firstname = $_POST['firstname'];
+	$lastname = $_POST['lastname'];
+	$username = $_POST['Username'];
+	$password = $_POST['Password'];
+	$cpassword = $_POST['CPassword'];
+	$phone = $_POST['Phone'];
+	$billingaddress = $_POST['BillingAddress'];
+	$creditcard = $_POST['CreditCard'];
+	$expdate = $_POST['ExpDate'];
+	
+	$query = "INSERT INTO buyer (buyerid, firstname, lastname, buyerusername, buyerpassword, cbuyerpassword, phone, billingaddress, creditcard, experationdate) VALUES(NULL,'$firstname', '$lastname', '$username', '$password', '$cpassword', '$phone', '$billingaddress', '$creditcard', '$expdate')";
+	
+	$result = $conn->query($query);
+	if(!$result) {
+		echo "The buyer account has been created";
+	}
+		die($conn->error);
+	
+}
 
 $conn->close();
 

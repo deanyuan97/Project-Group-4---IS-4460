@@ -1,0 +1,39 @@
+body {
+        background-color: gray;
+      }
+      h1 {
+        color: white;
+        text-align: center; 
+		font-family: veranda;
+		font-size: 50px;
+      }
+      p {
+        font-family: verdana;
+        font-size: 20px;
+		color: white;
+		text-align: center;
+      }
+      img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+form{
+	text-align: center;
+	color: white;
+}
+h2{
+	color: white;
+	text-align: center; 
+	font-family: veranda;
+}
+h3{
+	color: white;
+    text-align: center; 
+	font-family: veranda;
+}
+h4{
+	color: blue;
+    text-align: center; 
+	font-family: veranda;
+}

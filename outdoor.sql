@@ -36,14 +36,14 @@ CREATE TABLE `buyer` (
   `phone` varchar(11) DEFAULT NULL,
   `billingaddress` varchar(50) DEFAULT NULL,
   `creditcard` varchar(20) DEFAULT NULL,
-  `experationdate` varchar(11) DEFAULT NULL
+  `expirationdate` varchar(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `buyer`
 --
 
-INSERT INTO `buyer` (`buyerid`, `firstname`, `lastname`, `buyerusername`, `buyerpassword`, `cbuyerpassword`, `phone`, `billingaddress`, `creditcard`, `experationdate`) VALUES
+INSERT INTO `buyer` (`buyerid`, `firstname`, `lastname`, `buyerusername`, `buyerpassword`, `cbuyerpassword`, `phone`, `billingaddress`, `creditcard`, `expirationdate`) VALUES
 (1, 'Cameron', 'Clegg', 'cclegg10', 'test', 'test', '8012440189', '2190 ', 'adfa', 'adfadf');
 
 -- --------------------------------------------------------
@@ -53,12 +53,23 @@ INSERT INTO `buyer` (`buyerid`, `firstname`, `lastname`, `buyerusername`, `buyer
 --
 
 CREATE TABLE `item` (
-  `itemid` int(11) NOT NULL,
-  `name` int(11) DEFAULT NULL,
-  `description` int(11) DEFAULT NULL,
-  `price` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `itemid` int(255) AUTO_INCREMENT NOT NULL,
+  `name` varchar(50) DEFAULT NULL,
+  `description` varchar(255) DEFAULT NULL,
+  `price` varchar(50) DEFAULT NULL,
+  `IMG` varchar(255 ) NOT NULL,
+  PRIMARY KEY (`itemid`)
+) ENGINE=InnoDB AUTO_INCREMENT=255 DEFAULT CHARSET=utf8;
 
+
+INSERT INTO `item` (`itemid`, `name`, `description`, `price`, `IMG`) VALUES
+(1, 'Hydro Flask', 'Large Water Bottle', '$20.00', 'HydroFlask.jpg');
+
+INSERT INTO `item` (`itemid`, `name`, `description`, `price`, `IMG`) VALUES
+(2, 'Back Pack', 'Hiking Back Pack', '$50.00', 'Backpack.jpg');
+
+INSERT INTO `item` (`itemid`, `name`, `description`, `price`, `IMG`) VALUES
+(3, 'Hiking Shoes', 'Sturdy Shoes for Hiking', '$60.00', 'HikingShoes.jpg');
 -- --------------------------------------------------------
 
 --
@@ -67,10 +78,10 @@ CREATE TABLE `item` (
 
 CREATE TABLE `seller` (
   `sellerid` int(11) NOT NULL,
-  `firstname` int(11) DEFAULT NULL,
-  `lastname` int(11) DEFAULT NULL,
-  `sellerpassword` int(11) DEFAULT NULL,
-  `sellerusername` int(11) DEFAULT NULL
+  `firstname` varchar(50) DEFAULT NULL,
+  `lastname` varchar(50) DEFAULT NULL,
+  `sellerpassword` varchar(20) DEFAULT NULL,
+  `sellerusername` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --

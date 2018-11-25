@@ -36,8 +36,8 @@
 				</label>
 				<button class="btn btn-default pull-right" type="submit">Sign In</button>
 			</div>
-		</form>
-	</div>
+		</div>
+	</form>
 </main>
 
 <?php include_once 'inc/footer.php' ?>

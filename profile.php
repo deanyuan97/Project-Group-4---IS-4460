@@ -39,11 +39,10 @@ echo <<<_END
 		Last Name: $row[2];
 		Username: $row[3];
 		Password: $row[4];
-		Confirmed Password: $row[5];
-		Phone: $row[6];
-		Billing Address: $row[7];
-		Credit Card: $row[8];
-		Expiration Date: $row[9];
+		Phone: $row[5];
+		Billing Address: $row[6];
+		Credit Card: $row[7];
+		Expiration Date: $row[8];
 	</pre>
 		</form>
 _END;

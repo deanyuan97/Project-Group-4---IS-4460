@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db
--- Generation Time: Nov 25, 2018 at 07:00 AM
+-- Generation Time: Nov 25, 2018 at 06:58 PM
 -- Server version: 5.7.24
 -- PHP Version: 7.2.8
 
@@ -25,36 +25,11 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `buyer`
---
-
-CREATE TABLE `buyer` (
-  `id` int(11) NOT NULL,
-  `firstname` varchar(11) DEFAULT NULL,
-  `lastname` varchar(11) DEFAULT NULL,
-  `username` varchar(11) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `phone` varchar(11) DEFAULT NULL,
-  `billingaddress` varchar(50) DEFAULT NULL,
-  `creditcard` varchar(20) DEFAULT NULL,
-  `expirationdate` varchar(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `buyer`
---
-
-INSERT INTO `buyer` (`id`, `firstname`, `lastname`, `username`, `password`, `phone`, `billingaddress`, `creditcard`, `expirationdate`) VALUES
-(1, 'Cameron', 'Clegg', 'cclegg10', '$2y$10$1MbpLND.LF3fWlOSw9snAOX.fa92o26DQS9Rf8O6od/KcbYgwCZky', '8012440189', '2190 ', 'adfa', 'adfadf');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `item`
 --
 
 CREATE TABLE `item` (
-  `itemid` int(255) NOT NULL,
+  `id` bigint(20) NOT NULL,
   `name` varchar(50) DEFAULT NULL,
   `description` varchar(255) DEFAULT NULL,
   `price` varchar(50) DEFAULT NULL,
@@ -65,44 +40,71 @@ CREATE TABLE `item` (
 -- Dumping data for table `item`
 --
 
-INSERT INTO `item` (`itemid`, `name`, `description`, `price`, `IMG`) VALUES
+INSERT INTO `item` (`id`, `name`, `description`, `price`, `IMG`) VALUES
 (1, 'Hydro Flask', 'Large Water Bottle', '$20.00', 'HydroFlask.jpg'),
 (2, 'Back Pack', 'Hiking Back Pack', '$50.00', 'Backpack.jpg');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `seller`
+-- Table structure for table `purchase`
 --
 
-CREATE TABLE `seller` (
-  `id` int(11) NOT NULL,
-  `firstname` varchar(50) DEFAULT NULL,
-  `lastname` varchar(50) DEFAULT NULL,
+CREATE TABLE `purchase` (
+  `id` bigint(20) NOT NULL,
+  `item` bigint(20) NOT NULL,
+  `user` bigint(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE `user` (
+  `id` bigint(20) NOT NULL,
+  `firstname` varchar(255) DEFAULT NULL,
+  `lastname` varchar(255) DEFAULT NULL,
+  `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `username` varchar(20) NOT NULL
+  `phone` varchar(11) DEFAULT NULL,
+  `billingaddress` varchar(255) DEFAULT NULL,
+  `creditcard` varchar(20) DEFAULT NULL,
+  `expirationdate` varchar(11) DEFAULT NULL,
+  `type` varchar(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id`, `firstname`, `lastname`, `username`, `password`, `phone`, `billingaddress`, `creditcard`, `expirationdate`, `type`) VALUES
+(1, 'Cameron', 'Clegg', 'cclegg10', '$2y$10$1MbpLND.LF3fWlOSw9snAOX.fa92o26DQS9Rf8O6od/KcbYgwCZky', '8012440189', '2190 ', 'adfa', 'adfadf', 'buyer'),
+(3, 'Ben', 'Kulbertis', 'benkulbertis', '$2y$10$A705U3wBP9pbE06.eQNMvujw8z3dq4.odtH2NbhC3nr5S/Cv5wkpC', '1234567890', '123 Main St', '123123123', '22/22', 'buyer');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `buyer`
---
-ALTER TABLE `buyer`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `item`
 --
 ALTER TABLE `item`
-  ADD PRIMARY KEY (`itemid`);
+  ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `seller`
+-- Indexes for table `purchase`
 --
-ALTER TABLE `seller`
+ALTER TABLE `purchase`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_user` (`user`),
+  ADD KEY `fk_item` (`item`);
+
+--
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -113,7 +115,29 @@ ALTER TABLE `seller`
 -- AUTO_INCREMENT for table `item`
 --
 ALTER TABLE `item`
-  MODIFY `itemid` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `purchase`
+--
+ALTER TABLE `purchase`
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `purchase`
+--
+ALTER TABLE `purchase`
+  ADD CONSTRAINT `fk_item` FOREIGN KEY (`item`) REFERENCES `item` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

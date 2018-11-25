@@ -19,7 +19,7 @@ if(!empty($_POST)){
     die("Invalid form data");
   }
 
-  $query = "SELECT * FROM $type WHERE username='$username'";
+  $query = "SELECT * FROM user WHERE username='$username' AND type='$type'";
 
   $result = $conn->query($query);
   if(!$result) die($conn->error);

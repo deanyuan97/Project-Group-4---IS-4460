@@ -7,35 +7,15 @@
 
 	<!-- Boot Strap Links -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="stylesheet" href="styles.css" > 
+	<link rel="stylesheet" href="styles.css" >
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </head>
 
 <body style = "background-color: lightgray;">
 
-	<!-- Navbar -->
-	<nav class="navbar navbar-default">
-	  <div class="container">
-		<div class="navbar-header">
-		   <a class="navbar-brand" href="mainpage.php">Outdoor Swap <span class="glyphicon glyphicon-globe logo"></span></a>
-		</div>
-		<div class="collapse navbar-collapse" id="myNavbar">
-		  <ul class="nav navbar-nav navbar-right">
-		  	<li><a href="#login">LOGIN</a></li>
-			<li><a href="sellerview.php">LISTINGS</a></li>
-			<li><a href="#services">SERVICES</a></li>
-			<li><a href="#subsciption">SUBSCRIPTION</a></li>
-			<li><a href="#contact">CONTACT</a></li>
-			<li><a href="#about">ABOUT</a></li>
-		  </ul>
-		</div>
-	  </div>
-	</nav>
-</body>
-</html>
-
+<?php include_once 'inc/nav.php' ?>
 
 <?php
 require_once 'login.php';
@@ -43,9 +23,9 @@ $conn = new mysqli($hn, $un, $pw, $db);
 if ($conn->connect_error) die("Fatal Error");
 
 if(isset($_GET['itemid'])){
-	
+
 	$itemid = $_GET['itemid'];
-	
+
 	$query = "SELECT * FROM item where itemid=$itemid ";
 
 	$result = $conn->query($query);
@@ -69,12 +49,9 @@ echo <<<_END
 		</pre>
 _END;
 }
-	
+
 }
 ?>
-
-<html>
-<footer class="container-fluid text-center">
-			<button type="button"><a href='sellerview.php'>Return to your Post</a></button>
-	</footer>
+	<?php include_once 'inc/footer.php' ?>
+</body>
 </html>

@@ -1,7 +1,7 @@
 <html>
 	<head>
 
-		<title>Midterm Project Homepage</title>
+		<title>Outdoor Swap - Homepage</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<link rel="stylesheet" href="styles.css" >
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

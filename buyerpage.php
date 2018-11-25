@@ -17,7 +17,8 @@
 
 <?php include_once 'inc/nav.php' ?>
 
-	<main class="container-slim text-left">
+	<main class="container-fluid text-left bg-grey">
+		<div class="container-slim">
 		<h1>Buyer Homepage</h1>
 		<p><a href="paymentupdate.html">Update Billing</a> | <a href="buyeredit.html">Edit Account Details</a> | <a href="buyerdelete.html">Delete Account</a></p>
 		<form method='post' action='buyerpage.php'>
@@ -42,6 +43,7 @@
 						<input type="text" name="ExpDate"><br>
 						<input type="submit" value="Create Account">
 			</form>
+		</div>
 	</main>
 
 	<?php include_once 'inc/footer.php' ?>

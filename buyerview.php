@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Seller View Page</title>
+<title>All Listings - Outdoor Swap</title>
 	<link rel='stylesheet' href="styles.css">
 
 	<!-- Boot Strap Links -->
@@ -30,9 +30,14 @@ if(!$result) die($conn->error);
 
 $rows = $result->num_rows;
 
-for($j=0; $j<$rows; ++$j) {
-    $result->data_seek($j);
-    $row = $result->fetch_array(MYSQLI_NUM);
+if(!$rows){ ?>
+	<div class="container-fluid text-center">
+		<h3>No items listed!</h3>
+	</div>
+<?php } else {
+	for($j=0; $j<$rows; ++$j) {
+	    $result->data_seek($j);
+	    $row = $result->fetch_array(MYSQLI_NUM);
 echo <<<_END
 	<div id="services" class="container-fluid text-center">
 <pre>
@@ -44,22 +49,11 @@ echo <<<_END
  </pre>
 
 </pre>
-<form method = 'post' action = 'itemview.php'>
-</form>
-<form method = 'post' action='sellerdelete.php'>
-    <input type='hidden' name ='delete' value='yes'>
-    <input type='hidden' name ='itemid' value='$row[0]'>
-    <center> <input type='submit' value='Delete posting'></center>
-</form>
 _END;
 
-
+	}
 }
 ?>
-
-	<div class="container-fluid text-center">
-			<button type="button"><a href='selleradd.php'>Add a new Posting</a></button>
-	</div>
 	<?php include_once 'inc/footer.php' ?>
 </body>
 </html>

@@ -27,9 +27,10 @@ if(!empty($_POST)){
   } else {
     die("Invalid form data");
   }
-
-  if($password == $cpassword){
-    $password = password_hash($password, PASSWORD_BCRYPT);
+  if(!empty($password) && !empty($cpassword)){
+    if($password == $cpassword){
+      $password = password_hash($password, PASSWORD_BCRYPT);
+    } else backout();
   } else backout();
 
   $query = "INSERT INTO user (firstname, lastname, username, password, phone, billingaddress, creditcard, expirationdate, type) VALUES ('$firstname', '$lastname', '$username', '$password', '$phone', '$billingaddress', '$creditcard', '$expdate', '$type')";

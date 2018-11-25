@@ -25,7 +25,7 @@ require_once 'login.php';
 $conn = new mysqli($hn, $un, $pw, $db);
 if ($conn->connect_error) die("Fatal Error");
 
-$query = "SELECT * FROM item";
+$query = "SELECT * FROM item WHERE sold=0";
 
 $result = $conn->query($query);
 if(!$result) die($conn->error);

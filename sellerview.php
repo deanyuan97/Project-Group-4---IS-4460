@@ -25,7 +25,7 @@ require_once 'login.php';
 $conn = new mysqli($hn, $un, $pw, $db);
 if ($conn->connect_error) die("Fatal Error");
 
-$query = "SELECT * FROM item WHERE user='".$_SESSION['userid']."'";
+$query = "SELECT * FROM item WHERE user='".$_SESSION['userid']."' AND sold=0";
 
 $result = $conn->query($query);
 if(!$result) die($conn->error);

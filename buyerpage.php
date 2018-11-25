@@ -18,7 +18,7 @@
 <?php include_once 'inc/nav.php' ?>
 
 	<main class="container-fluid text-left bg-grey">
-		<div class="container-slim">
+		<div class="container-slim bg-white">
 		<h1>Buyer Homepage</h1>
 		<p><a href="paymentupdate.html">Update Billing</a> | <a href="buyeredit.html">Edit Account Details</a> | <a href="buyerdelete.html">Delete Account</a></p>
 		<form method='post' action='buyerpage.php'>
@@ -42,6 +42,7 @@
 						Expiration Date:
 						<input type="text" name="ExpDate"><br>
 						<input type="submit" value="Create Account">
+						<div class='clear'></div>
 			</form>
 		</div>
 	</main>

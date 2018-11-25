@@ -17,6 +17,7 @@ body {
       font-weight: 400;
       margin-bottom: 30px;
   }
+  .clear { clear: both; }
   .jumbotron {
       background-color: #e6f7ff;
       color: #303030;
@@ -27,8 +28,9 @@ body {
       padding: 60px 50px;
   }
   .container-slim {
-    width: 50%;
+    width: 55%;
     margin: 0 auto;
+    padding: 1px 20px 20px;
   }
   .container-slim input[type='text'], .container-slim input[type='password'] {
     width: 100%;
@@ -39,6 +41,9 @@ body {
   }
   .bg-grey {
       background-color: #f6f6f6;
+  }
+  .bg-white {
+    background-color: #fff;
   }
   .logo-small {
       color: #f4511e;

@@ -11,7 +11,7 @@
 
 <body>
 	<?php include_once 'inc/nav.php' ?>
-<h1>Buyer Profile Page</h1>
+<h1>Profile Page</h1>
 </body>
 </html>
 
@@ -22,7 +22,7 @@ require_once 'login.php';
 $conn = new mysqli($hn, $un, $pw, $db);
 if($conn->connect_error) die($conn->connect_error);
 
-$query = "SELECT * FROM buyer WHERE id='".$conn->real_escape_string($_SESSION['userid'])."'";
+$query = "SELECT * FROM user WHERE id='".$conn->real_escape_string($_SESSION['userid'])."' AND type='".$conn->real_escape_string($_SESSION['role'])."'";
 $result = $conn->query($query);
 if(!$result) die($conn->error);
 
@@ -34,15 +34,15 @@ for($j=0; $j<$row_count; ++$j){
 
 echo <<<_END
 	<pre>
-		Buyer ID: <a href='paymentupdate.php?isbn=$row[10]'>$row[0]</a>;
-		First Name: $row[1];
-		Last Name: $row[2];
-		Username: $row[3];
-		Password: $row[4];
-		Phone: $row[5];
-		Billing Address: $row[6];
-		Credit Card: $row[7];
-		Expiration Date: $row[8];
+		First Name: $row[1]
+		Last Name: $row[2]
+		Username: $row[3]
+		Password: $row[4]
+		Phone: $row[5]
+		Billing Address: $row[6]
+		Credit Card: $row[7]
+		Expiration Date: $row[8]
+		Type: $row[9]
 	</pre>
 		</form>
 _END;

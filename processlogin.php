@@ -34,7 +34,7 @@ if(!empty($_POST)){
     $_SESSION['username'] = $user['username'];
     session_write_close();
     header("Location: /mainpage.php");
-  }
+  } else backout();
   $conn->close();
 } else backout();
 

@@ -5,7 +5,7 @@
 <title>Buyer - Add</title>
 	<link rel='stylesheet' href="styles.css">
 
-	<!-- Boot Strap Links -->
+	<!-- Bootstrap Links -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="styles.css" >
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -20,7 +20,7 @@
 	<main class="container-fluid text-left bg-grey">
 		<div class="container-slim bg-white">
 		<h1>Buyer Homepage</h1>
-		<p><a href="paymentupdate.html">Update Billing</a> | <a href="buyeredit.html">Edit Account Details</a> | <a href="buyerdelete.html">Delete Account</a></p>
+		<p><a href="paymentupdate.php">Update Billing</a> | <a href="buyeredit.php">Edit Account Details</a> | <a href="buyerdelete.php">Delete Account</a></p>
 		<form method='post' action='buyerpage.php'>
 			<h3>Create Account</h3>
 						First Name:
@@ -30,9 +30,9 @@
 						Username:
 						<input type="text" name="Username"><br>
 						Password:
-						<input type="text" name="Password"><br>
+						<input type="password" name="Password"><br>
 						Confirm Password:
-						<input type="text" name="CPassword"><br>
+						<input type="password" name="CPassword"><br>
 						Phone:
 						<input type="text" name="Phone"><br>
 						Billing Address:

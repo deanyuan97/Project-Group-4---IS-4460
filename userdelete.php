@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Buyer - Edit</title>
+<title>Delete Account - Outdoor Swap</title>
 	<link rel='stylesheet' href="styles.css">
 
 	<!-- Boot Strap Links -->
@@ -18,17 +18,21 @@
 
 <?php include_once 'inc/nav.php' ?>
 
-	<main class="container-slim text-left">
-
-	<h1><a href="buyerpage.php">Buyer Information</a></h1>
-	<form>
-	<h3>Delete Account</h3>
-			Username:
-			<input type="text" name="Username"><br>
-			Password:
-			<input type="password" name="Password"><br>
-			<input type="submit" value="Delete Account">
-	</form>
+<main class="container-fluid text-left bg-grey">
+	<div class="container-slim bg-white">
+		<form method='post' action='processuserdelete.php'>
+		<h1>Delete Account</h1>
+				Verify Password:
+				<input type="password" name="password"><br>
+				<div class="row">
+					<div class="col-sm-12 form-group">
+						<br>
+						<button class="btn btn-default pull-right" type="submit">Delete Account</button>
+					</div>
+				</div>
+			</form>
+	</div>
+</main>
 	<?php include_once 'inc/footer.php' ?>
 </body>
 </html>

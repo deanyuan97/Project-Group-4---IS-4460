@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db
--- Generation Time: Nov 25, 2018 at 07:12 PM
+-- Generation Time: Nov 25, 2018 at 07:59 PM
 -- Server version: 5.7.24
 -- PHP Version: 7.2.8
 
@@ -43,7 +43,8 @@ CREATE TABLE `item` (
 
 INSERT INTO `item` (`id`, `name`, `description`, `price`, `IMG`, `user`) VALUES
 (1, 'Hydro Flask', 'Large Water Bottle', '$20.00', 'HydroFlask.jpg', 1),
-(2, 'Back Pack', 'Hiking Back Pack', '$50.00', 'Backpack.jpg', 1);
+(2, 'Back Pack', 'Hiking Back Pack', '$50.00', 'Backpack.jpg', 1),
+(3, 'Hiking Shoes', 'Sturdy Shoes for Hiking', '$60.00', 'HikingShoes.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -82,7 +83,8 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `firstname`, `lastname`, `username`, `password`, `phone`, `billingaddress`, `creditcard`, `expirationdate`, `type`) VALUES
 (1, 'Cameron', 'Clegg', 'cclegg10', '$2y$10$1MbpLND.LF3fWlOSw9snAOX.fa92o26DQS9Rf8O6od/KcbYgwCZky', '8012440189', '2190 ', 'adfa', 'adfadf', 'buyer'),
-(3, 'Ben', 'Kulbertis', 'benkulbertis', '$2y$10$A705U3wBP9pbE06.eQNMvujw8z3dq4.odtH2NbhC3nr5S/Cv5wkpC', '1234567890', '123 Main St', '123123123', '22/22', 'buyer');
+(3, 'Ben', 'Kulbertis', 'benkulbertis', '$2y$10$A705U3wBP9pbE06.eQNMvujw8z3dq4.odtH2NbhC3nr5S/Cv5wkpC', '1234567890', '123 Main St', '123123123', '22/22', 'buyer'),
+(4, 'Ben', 'Kulbertis', 'ben1', '$2y$10$C/aHcs7Xd4xRInabT8viH.6dZU8DVU22fWPIx6Hoh7a1ZXxBha62u', '123123', '123 maple st', '1231232', '11/22', 'seller');
 
 --
 -- Indexes for dumped tables
@@ -129,7 +131,7 @@ ALTER TABLE `purchase`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables

@@ -33,7 +33,7 @@ $user = $result->fetch_assoc();
 	<main class="container-fluid text-left bg-grey">
 		<div class="container-slim bg-white">
 		<form method='post' action='processuseredit.php'>
-			<h3>Edit Account Details</h3>
+			<h1>Edit Account Details</h1>
 						First Name:
 						<input type="text" name="firstname" value="<?php echo $user['firstname'] ?>"><br>
 						Last Name:

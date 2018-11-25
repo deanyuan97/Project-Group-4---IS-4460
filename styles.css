@@ -18,6 +18,7 @@ body {
       margin-bottom: 30px;
   }
   .clear { clear: both; }
+  .bigtext { font-size: 18px; }
   .jumbotron {
       background-color: #e6f7ff;
       color: #303030;

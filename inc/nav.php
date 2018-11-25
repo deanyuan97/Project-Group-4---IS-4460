@@ -23,7 +23,7 @@
           <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="profile.php">Profile</a></li>
-            <li><a href="buyeredit.php">Update Account</a></li>
+            <li><a href="useredit.php">Update Account</a></li>
             <li><a href="buyerdelete.php" id='accountdelete'>Delete Account</a></li>
             <li class="divider"></li>
             <li><a href="logout.php">Sign out</a></li>

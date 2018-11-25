@@ -32,7 +32,6 @@ $user = $result->fetch_assoc();
 
 	<main class="container-fluid text-left bg-grey">
 		<div class="container-slim bg-white">
-			<a href="profile.php"><h1>Buyer Information</h1></a>
 		<form method='post' action='processuseredit.php'>
 			<h3>Edit Account Details</h3>
 						First Name:

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db
--- Generation Time: Nov 25, 2018 at 06:58 PM
+-- Generation Time: Nov 25, 2018 at 07:12 PM
 -- Server version: 5.7.24
 -- PHP Version: 7.2.8
 
@@ -33,16 +33,17 @@ CREATE TABLE `item` (
   `name` varchar(50) DEFAULT NULL,
   `description` varchar(255) DEFAULT NULL,
   `price` varchar(50) DEFAULT NULL,
-  `IMG` varchar(255) NOT NULL
+  `IMG` varchar(255) NOT NULL,
+  `user` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `item`
 --
 
-INSERT INTO `item` (`id`, `name`, `description`, `price`, `IMG`) VALUES
-(1, 'Hydro Flask', 'Large Water Bottle', '$20.00', 'HydroFlask.jpg'),
-(2, 'Back Pack', 'Hiking Back Pack', '$50.00', 'Backpack.jpg');
+INSERT INTO `item` (`id`, `name`, `description`, `price`, `IMG`, `user`) VALUES
+(1, 'Hydro Flask', 'Large Water Bottle', '$20.00', 'HydroFlask.jpg', 1),
+(2, 'Back Pack', 'Hiking Back Pack', '$50.00', 'Backpack.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -91,7 +92,8 @@ INSERT INTO `user` (`id`, `firstname`, `lastname`, `username`, `password`, `phon
 -- Indexes for table `item`
 --
 ALTER TABLE `item`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_owner` (`user`);
 
 --
 -- Indexes for table `purchase`
@@ -132,6 +134,12 @@ ALTER TABLE `user`
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `item`
+--
+ALTER TABLE `item`
+  ADD CONSTRAINT `fk_owner` FOREIGN KEY (`user`) REFERENCES `user` (`id`);
 
 --
 -- Constraints for table `purchase`

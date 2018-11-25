@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Buyer - Add</title>
+<title>New Account - Outdoor Swap</title>
 	<link rel='stylesheet' href="styles.css">
 
 	<!-- Bootstrap Links -->

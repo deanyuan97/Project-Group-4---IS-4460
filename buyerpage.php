@@ -13,26 +13,9 @@
 
 </head>
 
-<body style = "background-color: lightgray;">
+<body>
 
-	<!-- Navbar -->
-	<nav class="navbar navbar-default">
-		<div class="container">
-		<div class="navbar-header">
-			 <a class="navbar-brand" href="#myPage">Outdoor Swap <span class="glyphicon glyphicon-leaf"></span></a>
-		</div>
-		<div class="collapse navbar-collapse" id="myNavbar">
-			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#login">LOGIN</a></li>
-			<li><a href="#listings">LISTINGS</a></li>
-			<li><a href="#services">SERVICES</a></li>
-			<li><a href="#subsciption">SUBSCRIPTION</a></li>
-			<li><a href="#contact">CONTACT</a></li>
-			<li><a href="#about">ABOUT</a></li>
-			</ul>
-		</div>
-		</div>
-	</nav>
+<?php include_once 'inc/nav.php' ?>
 
 	<main class="container-slim text-left">
 		<h1>Buyer Homepage</h1>
@@ -60,6 +43,8 @@
 						<input type="submit" value="Create Account">
 			</form>
 	</main>
+
+	<?php include_once 'inc/footer.php' ?>
 </body>
 </html>
 
@@ -80,15 +65,15 @@ if(isset($_POST['firstname']))
 	$billingaddress = $_POST['BillingAddress'];
 	$creditcard = $_POST['CreditCard'];
 	$expdate = $_POST['ExpDate'];
-	
+
 	$query = "INSERT INTO buyer (buyerid, firstname, lastname, buyerusername, buyerpassword, cbuyerpassword, phone, billingaddress, creditcard, experationdate) VALUES(NULL,'$firstname', '$lastname', '$username', '$password', '$cpassword', '$phone', '$billingaddress', '$creditcard', '$expdate')";
-	
+
 	$result = $conn->query($query);
 	if(!$result) {
 		echo "The buyer account has been created";
 	}
 		die($conn->error);
-	
+
 }
 
 $conn->close();

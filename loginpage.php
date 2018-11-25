@@ -1,41 +1,25 @@
 <html>
 	<head>
 
-		<title>Midterm Project Homepage</title>
+		<title>Outdoor Swap - Login</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-		<link rel="stylesheet" href="styles.css" > 
+		<link rel="stylesheet" href="styles.css" >
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	</head>
 
 <body>
-	
-<!-- Navbar -->
-		<nav class="navbar navbar-default">
-	  <div class="container">
-		<div class="navbar-header">
-		  <a class="navbar-brand" href="mainpage-test.html"><span class="glyphicon glyphicon-home"></span></a>
-		</div>
-		<div class="collapse navbar-collapse" id="myNavbar">
-		  <ul class="nav navbar-nav navbar-right">
-			<li><a href="mainpage.php">HOME</a></li>
-			<li><a href="loginpage.php">LOGIN</a></li>
-			<li><a href="sellerview.php">SELLER</a></li>
-			<li><a href="buyer page.php">BUYER</a></li>
-			<li><a href="#contact">CONTACT</a></li>
-		  </ul>
-		</div>
-	  </div>
-	</nav>	
-	
+
+	<?php include_once 'nav.php' ?>
+
 	<!-- Header -->
 	<div class="jumbotron text-center">
 		<img src='Images/main_image.jpg' width='500' height='300' style="width 50"></img>
 		<h1>Outdoor Swap</h1>
 		<p>Where adventuers buy and sell</p>
-	</div>	
+	</div>
 <!-- Login -->
-	
+
 	<div id="login">
 	</div>
 	<h3>Buyer Login</h3>

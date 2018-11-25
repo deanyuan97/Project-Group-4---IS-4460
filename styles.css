@@ -46,7 +46,8 @@ body {
   }
   .logo {
       color: #f4511e;
-      font-size: 200px;
+      font-size: 30px;
+      vertical-align: middle;
   }
   .thumbnail {
       padding: 0 0 15px 0;
@@ -127,9 +128,9 @@ body {
       border-radius: 0;
       font-family: Montserrat, sans-serif;
     }
-      .navbar li a, .navbar .navbar-brand {
+    .navbar li a, .navbar .navbar-brand {
       color: #fff !important;
-  }
+    }
   .navbar-nav li a:hover, .navbar-nav li.active a {
       color: #f4511e !important;
       background-color: #fff !important;
@@ -137,6 +138,9 @@ body {
   .navbar-default .navbar-toggle {
       border-color: transparent;
       color: #fff !important;
+  }
+  .navbar-header {
+    margin-top: -5px;
   }
   footer .glyphicon {
       font-size: 20px;
@@ -185,7 +189,4 @@ body {
     .logo {
         font-size: 150px;
     }
-  }
-  .glyphicon.glyphicon-globe {
-    font-size: 100px;
   }

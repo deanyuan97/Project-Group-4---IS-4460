@@ -144,6 +144,9 @@ body {
       border-color: transparent;
       color: #fff !important;
   }
+  .navbar-text {
+    color: #fff !important;
+  }
   .navbar-header {
     margin-top: -5px;
   }

@@ -52,6 +52,7 @@ if(!empty($_POST)){
     session_write_close();
     header("Location: /mainpage.php");
   }
+  $conn->close();
 } else backout();
 
 ?>

@@ -52,7 +52,6 @@ $user = $result->fetch_assoc();
 						<input type="text" name="expdate" value="<?php echo $user['expirationdate'] ?>"><br><br>
 						<div class="row">
 							<div class="col-sm-12 form-group">
-								<input type='hidden' name='type' value='<?php echo $_SESSION['role'] ?>'>
 								<button class="btn btn-default pull-right" type="submit">Update</button>
 							</div>
 						</div>

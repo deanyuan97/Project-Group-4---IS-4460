@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!doctype html>
 <html>
 <head>
@@ -63,7 +64,7 @@ if (isset($_POST['name']))
 
 	$result=$conn->query($query);
 	if(!$result) die($conn->error);
-	
+
 }
 
 $conn->close();

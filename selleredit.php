@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!doctype html>
 <html>
 <head>
@@ -40,7 +41,7 @@ if ($conn->connect_error) die("Fatal Error");
 if(isset($_GET['itemid'])){
 
 	$itemid = $_GET['itemid'];
-	
+
 	$query = "SELECT * FROM item where itemid=$itemid ";
 	$result = $conn->query($query);
 	if(!$result) die($conn->error);
@@ -70,7 +71,7 @@ echo <<<_END
 	</form>
 	</pre>
 _END;
-	
+
 	if(isset($_POST['update'])){
 	$itemid = $_POST['itemid'];
 	$name = $_POST['name'];
@@ -80,16 +81,16 @@ _END;
 
 	$query = "UPDATE item set name = '$name', description = '$description', price = '$price', IMG = '$IMG' where itemid=$itemid ";
 
-	
+
 	$result = $conn->query($query);
 	if (!$result) die($conn->connect_error);
 }
 if(isset($_POST['delete'])){
-	
+
 	$itemid=$_POST['itemid'];
-	
+
 	$query="Delete from item where name='name'";
-	
+
 	$result = $conn->query($query);
 if(!$result) die($conn->error);
 

@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <html>
 	<head>
 
@@ -13,63 +14,31 @@
 	<?php include_once 'inc/nav.php' ?>
 
 <!-- Login -->
-<div class="container-fluid">
-	<div class="container-slim">
-	<h3>Buyer Login</h3>
-	<div class="row">
-		<div class="col-sm-6 form-group">
-			<input class="form-control" id="username" username="username" placeholder="Username" type="text" required>
+<main class="container-fluid bg-grey">
+	<div class="container-slim bg-white">
+	<form method='post' action='processlogin.php'>
+		<h3>Login</h3>
+		<div class="row">
+			<div class="col-sm-6 form-group">
+				<input class="form-control" id="username" name="username" placeholder="Username" type="text" required>
+			</div>
+			<div class="col-sm-6 form-group">
+				<input class="form-control" id="password" name="password" placeholder="Password" type="password" required>
+			</div>
 		</div>
-		<div class="col-sm-6 form-group">
-			<input class="form-control" id="password" name="password" placeholder="Password" type="password" required>
-		</div>
-		<div class="col-sm-12 form-group">
-			<button class="btn btn-default pull-right" type="submit">Sign In</button>
-		</div>
+		<div class="row">
+			<div class="col-sm-6 form-group pull-right">
+				<label class="radio-inline">
+					<input type="radio" name="type" value="buyer" checked> Buyer
+				</label>
+				<label class="radio-inline">
+					<input type="radio" name="type" value="seller"> Seller
+				</label>
+				<button class="btn btn-default pull-right" type="submit">Sign In</button>
+			</div>
+		</form>
 	</div>
-	<hr><br>
-	<h3>Seller Login</h3>
-    <div class="row">
-      <div class="col-sm-6 form-group">
-        <input class="form-control" id="username" username="username" placeholder="Username" type="text" required>
-      </div>
-      <div class="col-sm-6 form-group">
-        <input class="form-control" id="password" name="password" placeholder="Password" type="password" required>
-      </div>
-      <div class="col-sm-12 form-group">
-        <button class="btn btn-default pull-right" type="submit">Sign In</button>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- Contact -->
-		<div id="contact" class="container-fluid bg-grey">
-  <h2 class="text-center">CONTACT</h2>
-  <div class="row">
-    <div class="col-sm-5">
-      <p>Contact us with any questions</p>
-      <p><span class="glyphicon glyphicon-map-marker"></span> Salt Lake City, UT</p>
-      <p><span class="glyphicon glyphicon-phone"></span> 801-555-5555</p>
-      <p><span class="glyphicon glyphicon-envelope"></span> outdoorswap@test.outdoorswap.com</p>
-    </div>
-    <div class="col-sm-7">
-      <div class="row">
-        <div class="col-sm-6 form-group">
-          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
-        </div>
-        <div class="col-sm-6 form-group">
-          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
-        </div>
-      </div>
-      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
-      <div class="row">
-        <div class="col-sm-12 form-group">
-          <button class="btn btn-default pull-right" type="submit">Send</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+</main>
 
 <?php include_once 'inc/footer.php' ?>
 </body>

@@ -13,7 +13,16 @@
       <li><a href="sellerview.php">SELLER</a></li>
       <li><a href="buyerpage.php">BUYER</a></li>
       <li class="navbar-text">|</li>
-      <li><a href="loginpage.php">LOGIN</a></li>
+      <?php if($_SESSION['username']) { ?>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#"><?php echo $_SESSION['username'] ?>
+          <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="profile.php">Profile</a></li>
+            <li><a href="logout.php">Sign out</a></li>
+          </ul>
+        </li>
+      <?php } else echo "<li><a href='loginpage.php'>LOGIN</a></li>"; ?>
     </ul>
   </div>
   </div>

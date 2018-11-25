@@ -136,13 +136,22 @@ body {
     .navbar li a, .navbar .navbar-brand {
       color: #fff !important;
     }
-  .navbar-nav li a:hover, .navbar-nav li.active a {
+  .navbar-nav li a:hover, .navbar-nav li.active a, .navbar-nav>.open>a {
       color: #f4511e !important;
       background-color: #fff !important;
   }
   .navbar-default .navbar-toggle {
       border-color: transparent;
       color: #fff !important;
+  }
+  .dropdown-menu li a {
+    color: #f4511e !important;
+    letter-spacing: normal;
+  }
+  .dropdown-menu li a:hover {
+    color: #fff !important;
+    letter-spacing: normal;
+    background-color: #03a01f !important;
   }
   .navbar-text {
     color: #fff !important;

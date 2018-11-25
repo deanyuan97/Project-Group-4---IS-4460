@@ -10,54 +10,38 @@
 
 <body>
 
-	<?php include_once 'nav.php' ?>
+	<?php include_once 'inc/nav.php' ?>
 
-	<!-- Header -->
-	<div class="jumbotron text-center">
-		<img src='Images/main_image.jpg' width='500' height='300' style="width 50"></img>
-		<h1>Outdoor Swap</h1>
-		<p>Where adventuers buy and sell</p>
-	</div>
 <!-- Login -->
-
-	<div id="login">
-	</div>
+<div class="container-fluid">
+	<div class="container-slim">
 	<h3>Buyer Login</h3>
-	 <div class="col-sm-7">
-      <div class="row">
-        <div class="col-sm-6 form-group">
-          <input class="form-control" id="username" username="username" placeholder="Username" type="text" required>
-        </div>
-        <div class="col-sm-6 form-group">
-          <input class="form-control" id="password" name="password" placeholder="Password" type="text" required>
-        </div>
-        <div class="col-sm-12 form-group">
-          <button class="btn btn-default pull-right" type="submit">Sign In</button>
-        </div>
+	<div class="row">
+		<div class="col-sm-6 form-group">
+			<input class="form-control" id="username" username="username" placeholder="Username" type="text" required>
+		</div>
+		<div class="col-sm-6 form-group">
+			<input class="form-control" id="password" name="password" placeholder="Password" type="password" required>
+		</div>
+		<div class="col-sm-12 form-group">
+			<button class="btn btn-default pull-right" type="submit">Sign In</button>
+		</div>
+	</div>
+	<hr><br>
+	<h3>Seller Login</h3>
+    <div class="row">
+      <div class="col-sm-6 form-group">
+        <input class="form-control" id="username" username="username" placeholder="Username" type="text" required>
+      </div>
+      <div class="col-sm-6 form-group">
+        <input class="form-control" id="password" name="password" placeholder="Password" type="password" required>
+      </div>
+      <div class="col-sm-12 form-group">
+        <button class="btn btn-default pull-right" type="submit">Sign In</button>
       </div>
     </div>
   </div>
 </div>
-</div>
-<br><br><br>
-<h3>Seller Login</h3>
-	 <div class="col-sm-7">
-      <div class="row">
-        <div class="col-sm-6 form-group">
-          <input class="form-control" id="username" username="username" placeholder="Username" type="text" required>
-        </div>
-        <div class="col-sm-6 form-group">
-          <input class="form-control" id="password" name="password" placeholder="Password" type="text" required>
-        </div>
-        <div class="col-sm-12 form-group">
-          <button class="btn btn-default pull-right" type="submit">Sign In</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<br><br><br>
 <!-- Contact -->
 		<div id="contact" class="container-fluid bg-grey">
   <h2 class="text-center">CONTACT</h2>
@@ -86,3 +70,7 @@
     </div>
   </div>
 </div>
+
+<?php include_once 'inc/footer.php' ?>
+</body>
+</html>

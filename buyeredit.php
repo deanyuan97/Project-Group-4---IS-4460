@@ -15,24 +15,7 @@
 
 <body style = "background-color: lightgray;">
 
-	<!-- Navbar -->
-	<nav class="navbar navbar-default">
-		<div class="container">
-		<div class="navbar-header">
-			 <a class="navbar-brand" href="#myPage">Outdoor Swap <span class="glyphicon glyphicon-leaf"></span></a>
-		</div>
-		<div class="collapse navbar-collapse" id="myNavbar">
-			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#login">LOGIN</a></li>
-			<li><a href="#listings">LISTINGS</a></li>
-			<li><a href="#services">SERVICES</a></li>
-			<li><a href="#subsciption">SUBSCRIPTION</a></li>
-			<li><a href="#contact">CONTACT</a></li>
-			<li><a href="#about">ABOUT</a></li>
-			</ul>
-		</div>
-		</div>
-	</nav>
+	<?php include_once 'inc/nav.php' ?>
 
 	<main class="container-slim text-left">
 		<a href="buyerpage.php"><h1>Buyer Information</h1></a>

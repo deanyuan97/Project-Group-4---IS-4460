@@ -153,6 +153,11 @@ body {
     letter-spacing: normal;
     background-color: #03a01f !important;
   }
+  .dropdown-menu li a#accountdelete:hover {
+    color: #fff !important;
+    letter-spacing: normal;
+    background-color: red !important;
+  }
   .navbar-text {
     color: #fff !important;
   }

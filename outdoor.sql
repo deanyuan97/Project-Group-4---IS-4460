@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db
--- Generation Time: Nov 25, 2018 at 05:36 AM
+-- Generation Time: Nov 25, 2018 at 06:20 AM
 -- Server version: 5.7.24
 -- PHP Version: 7.2.8
 
@@ -33,7 +33,7 @@ CREATE TABLE `buyer` (
   `firstname` varchar(11) DEFAULT NULL,
   `lastname` varchar(11) DEFAULT NULL,
   `username` varchar(11) NOT NULL,
-  `password` varchar(11) NOT NULL,
+  `password` varchar(255) NOT NULL,
   `phone` varchar(11) DEFAULT NULL,
   `billingaddress` varchar(50) DEFAULT NULL,
   `creditcard` varchar(20) DEFAULT NULL,
@@ -45,7 +45,7 @@ CREATE TABLE `buyer` (
 --
 
 INSERT INTO `buyer` (`buyerid`, `firstname`, `lastname`, `username`, `password`, `phone`, `billingaddress`, `creditcard`, `expirationdate`) VALUES
-(1, 'Cameron', 'Clegg', 'cclegg10', 'test', '8012440189', '2190 ', 'adfa', 'adfadf');
+(1, 'Cameron', 'Clegg', 'cclegg10', '$2y$10$1MbpLND.LF3fWlOSw9snAOX.fa92o26DQS9Rf8O6od/KcbYgwCZky', '8012440189', '2190 ', 'adfa', 'adfadf');
 
 -- --------------------------------------------------------
 
@@ -79,7 +79,7 @@ CREATE TABLE `seller` (
   `sellerid` int(11) NOT NULL,
   `firstname` varchar(50) DEFAULT NULL,
   `lastname` varchar(50) DEFAULT NULL,
-  `password` varchar(20) NOT NULL,
+  `password` varchar(255) NOT NULL,
   `username` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

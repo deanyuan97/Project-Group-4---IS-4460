@@ -41,16 +41,12 @@ if(!$rows){ ?>
 	    $result->data_seek($j);
 	    $row = $result->fetch_array(MYSQLI_NUM);
 echo <<<_END
-	<div id="services" class="container-fluid text-center">
-<pre>
-      <img height='350' width='300' src='$row[4]'></img>
-      <h4>Name: <a href='itemview.php?itemid=$row[0]'>$row[1]</a></h4>
-      <h4>Description: $row[2]</h4>
-      <h4>Price: $row[3]</h4>
-    </div>
- </pre>
-
-</pre>
+<article class="container-slim text-left bg-white">
+  <img height='350' width='300' src='$row[4]'></img>
+  <h4>Name: $row[1]</h4>
+  <h4>Description: $row[2]</h4>
+  <h4>Price: $row[3]</h4>
+</article>
 _END;
 
 	}

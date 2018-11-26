@@ -43,14 +43,17 @@ if(!$rows){ ?>
 echo <<<_END
 <article class="container-slim text-left bg-white">
   <img height='350' width='300' src='$row[4]' class='pull-left'></img>
-	<form method='post' action='sellerdelete.php'>
-			<input type='hidden' name='delete' value='yes'>
-			<input type='hidden' name='itemid' value='$row[0]'>
-			<input type='submit' value='Delete posting'>
-	</form>
-  <h4>Name: <a href='itemview.php?itemid=$row[0]'>$row[1]</a></h4>
+  <h4>Name: $row[1]</h4>
   <h4>Description: $row[2]</h4>
   <h4>Price: $row[3]</h4>
+	<div class='itembuttons'>
+		<a href='selleredit.php?id=$row[0]' class="btn btn-success">Edit posting</a>
+		<form method='post' action='sellerdelete.php'>
+				<input type='hidden' name='delete' value='yes'>
+				<input type='hidden' name='itemid' value='$row[0]'>
+				<input type='submit' value='Delete posting' class="btn btn-success">
+		</form>
+	</div>
 	<div class='clear'></div>
 </article>
 _END;

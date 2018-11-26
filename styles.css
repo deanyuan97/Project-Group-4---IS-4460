@@ -20,7 +20,16 @@ body {
   article {
     margin-top: 20px !important;
     border: 1px solid #888;
+    position: relative;
   }
+  .itembuttons {
+    float: right;
+    position: absolute;
+    bottom:15px;
+    right: 15px;
+  }
+  .itembuttons a, .itembuttons input { width: 120px; }
+  .inblk { display: inline-block; }
   .clear { clear: both; }
   .bigtext { font-size: 18px; }
   .jumbotron {

@@ -2,7 +2,7 @@
 session_start();
 
 function backout(){
-  header("Location: /userdelete.php");
+  header("Location: userdelete.php");
 }
 
 if(!empty($_POST)){
@@ -25,7 +25,7 @@ if(!empty($_POST)){
       $result = $conn->query($query);
       if(!$result) die($conn->error);
       session_destroy();
-      header("Location: /mainpage.php");
+      header("Location: mainpage.php");
   } else backout();
   $conn->close();
 } else backout();

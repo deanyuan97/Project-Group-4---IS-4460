@@ -1,5 +1,5 @@
 <?php session_start();
-if($_SESSION['role'] != 'buyer') header("Location: /mainpage.php");
+if($_SESSION['role'] != 'buyer') header("Location: mainpage.php");
 ?>
 <!doctype html>
 <html>

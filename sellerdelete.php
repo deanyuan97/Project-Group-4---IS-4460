@@ -4,16 +4,13 @@ $conn=new mysqli($hn, $un, $pw, $db);
 if ($conn->connect_error) die("Fatal Error");
 
 $itemid=$_POST['itemid'];
-$query="Delete from item where itemid='$itemid'";
-	
-	
-if ($conn->query($query)===TRUE){
-	Echo "Record deleted successfully";
-} Else {
-	Echo "Error deleting record:" .$conn->error;
-	}
-	
-$conn->close();
-	
+$query="DELETE FROM item WHERE id='$itemid'";
 
+if ($conn->query($query)===TRUE){
+	header("Location: /sellerview.php");
+} else {
+	die("Error deleting record:" .$conn->error);
+}
+
+$conn->close();
 ?>

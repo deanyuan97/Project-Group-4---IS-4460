@@ -11,7 +11,7 @@ $query="INSERT INTO sale (item, user) VALUES ($itemid, $userid)";
 if ($conn->query($query)===TRUE){
 	$query="UPDATE item SET sold=1 WHERE id=".$itemid;
 	if ($conn->query($query)===TRUE){
-		header("Location: /buyerorders.php");
+		header("Location: buyerorders.php");
 	} else {
 		die("Error:" .$conn->error);
 	}

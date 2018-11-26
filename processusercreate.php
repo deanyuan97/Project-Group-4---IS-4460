@@ -1,7 +1,7 @@
 <?php
 
 function backout(){
-  header("Location: /usercreate.php");
+  header("Location: usercreate.php");
 }
 
 if(!empty($_POST)){
@@ -51,7 +51,7 @@ if(!empty($_POST)){
     $_SESSION['role'] = $type;
     $_SESSION['username'] = $user['username'];
     session_write_close();
-    header("Location: /mainpage.php");
+    header("Location: mainpage.php");
   }
   $conn->close();
 } else backout();

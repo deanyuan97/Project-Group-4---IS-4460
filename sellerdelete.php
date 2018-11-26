@@ -7,7 +7,7 @@ $itemid=$_POST['itemid'];
 $query="DELETE FROM item WHERE id='$itemid'";
 
 if ($conn->query($query)===TRUE){
-	header("Location: /sellerview.php");
+	header("Location: sellerview.php");
 } else {
 	die("Error deleting record:" .$conn->error);
 }

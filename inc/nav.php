@@ -10,14 +10,14 @@
       <li><a href="mainpage.php#pricing">PRICING</a></li>
       <li><a href="mainpage.php#contact">CONTACT</a></li>
       <li class="navbar-text">|</li>
-      <?php if($_SESSION['role'] == 'seller') { ?>
+      <?php if((isset($_SESSION['role']) ? $_SESSION['role'] : null) == 'seller') { ?>
         <li><a href="sellerview.php">MY LISTINGS</a></li>
         <li class="navbar-text">|</li>
-      <?php } elseif($_SESSION['role'] == 'buyer') { ?>
+      <?php } if((isset($_SESSION['role']) ? $_SESSION['role'] : null) == 'buyer') { ?>
         <li><a href="buyerview.php">ALL LISTINGS</a></li>
         <li class="navbar-text">|</li>
       <?php } ?>
-      <?php if($_SESSION['username']) { ?>
+      <?php if((isset($_SESSION['username']) ? $_SESSION['username'] : null)) { ?>
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#"><?php echo $_SESSION['username'] ?>
           <span class="caret"></span></a>

@@ -2,7 +2,7 @@
 session_start();
 
 function backout(){
-  header("Location: /useredit.php");
+  header("Location: useredit.php");
 }
 
 if(!empty($_POST)){

@@ -6,7 +6,7 @@ function backout(){
 }
 
 if(!empty($_POST)){
-  include_once "login.php";
+  require_once "db.php";
   $conn = new mysqli($hn, $un, $pw, $db);
   if ($conn->connect_error) die("Fatal Error");
 

@@ -1,16 +1,15 @@
 <?php session_start();
-if($_SESSION['role'] != 'seller') header("Location: /mainpage.php");
+if($_SESSION['role'] != 'seller') header("Location: ../mainpage.php");
 ?>
 <!doctype html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>My Sales - Outdoor Swap</title>
-	<link rel='stylesheet' href="styles.css">
 
-	<!-- Boot Strap Links -->
+	<!-- Bootstrap Links -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="stylesheet" href="styles.css" >
+	<link rel="stylesheet" href="../styles.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
@@ -18,10 +17,14 @@ if($_SESSION['role'] != 'seller') header("Location: /mainpage.php");
 
 <body style = "background-color: lightgray;">
 
-<?php
-include_once 'inc/nav.php';
+<?php require_once 'sellernav.php'; ?>
 
-require_once 'login.php';
+<div class="container-slim text-left bg-white">
+	<h1>My Sales</h1>
+</div>
+
+<?php
+require_once '../db.php';
 $conn = new mysqli($hn, $un, $pw, $db);
 if ($conn->connect_error) die("Fatal Error");
 
@@ -48,6 +51,6 @@ _END;
 	}
 }
 ?>
-	<?php include_once 'inc/footer.php' ?>
+	<?php require_once '../inc/footer.php' ?>
 </body>
 </html>

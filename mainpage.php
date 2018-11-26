@@ -11,7 +11,7 @@
 
 <body>
 
-	<?php include_once 'inc/nav.php' ?>
+	<?php require_once 'inc/nav.php' ?>
 
 	<!-- Header -->
 	<div class="jumbotron text-center">
@@ -71,7 +71,7 @@
         <div class="panel-footer">
           <h3>Free</h3>
           <h4>enjoy!</h4>
-          <button class="btn btn-lg">Create Account</button>
+          <a href='loginpage.php' class="btn btn-lg">Create Account</a>
         </div>
       </div>
     </div>
@@ -88,7 +88,7 @@
         <div class="panel-footer">
           <h3>$5.99</h3>
           <h4>per month</h4>
-          <button class="btn btn-lg">Create Account</button>
+          <a href='loginpage.php' class="btn btn-lg">Create Account</a>
         </div>
       </div>
     </div>
@@ -105,7 +105,7 @@
         <div class="panel-footer">
           <h3>$65.00</h3>
           <h4>Annually</h4>
-          <button class="btn btn-lg">Create Account</button>
+          <a href='loginpage.php' class="btn btn-lg">Create Account</a>
         </div>
       </div>
     </div>
@@ -181,7 +181,7 @@
   </div>
 </div>
 
-<?php include_once 'inc/footer.php' ?>
+<?php require_once 'inc/footer.php' ?>
 
 </body>
 </html>
@@ -189,7 +189,7 @@
 
 <?php
 
-require_once 'login.php';
+require_once 'db.php';
 
 $conn = new mysqli($hn, $un, $pw, $db);
 if($conn->connect_error) die($conn->connect_error);

@@ -5,7 +5,7 @@ function backout(){
 }
 
 if(!empty($_POST)){
-  include_once "login.php";
+  require_once "db.php";
   $conn = new mysqli($hn, $un, $pw, $db);
   if ($conn->connect_error) die("Fatal Error");
 
@@ -51,7 +51,7 @@ if(!empty($_POST)){
     $_SESSION['role'] = $type;
     $_SESSION['username'] = $user['username'];
     session_write_close();
-    header("Location: mainpage.php");
+    header("Location: ../mainpage.php");
   }
   $conn->close();
 } else backout();

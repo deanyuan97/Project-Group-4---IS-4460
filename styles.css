@@ -110,7 +110,7 @@ body {
   .panel-footer .btn:hover {
       border: 1px solid #66ccff;
       background-color: #66ccff !important;
-      color: #66ccff;
+      color: #fff;
   }
   .panel-heading {
       color: #fff !important;

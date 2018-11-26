@@ -6,7 +6,7 @@ function backout(){
 }
 
 if(!empty($_POST)){
-  include_once "login.php";
+  require_once "db.php";
   $conn = new mysqli($hn, $un, $pw, $db);
   if ($conn->connect_error) die("Fatal Error");
 
@@ -25,7 +25,7 @@ if(!empty($_POST)){
       $result = $conn->query($query);
       if(!$result) die($conn->error);
       session_destroy();
-      header("Location: mainpage.php");
+      header("Location: ../mainpage.php");
   } else backout();
   $conn->close();
 } else backout();

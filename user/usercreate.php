@@ -4,11 +4,10 @@
 <head>
 <meta charset="UTF-8">
 <title>New Account - Outdoor Swap</title>
-	<link rel='stylesheet' href="styles.css">
 
 	<!-- Bootstrap Links -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="stylesheet" href="styles.css" >
+	<link rel='stylesheet' href="../styles.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
@@ -16,11 +15,11 @@
 
 <body>
 
-<?php include_once 'inc/nav.php' ?>
+<?php require_once 'usernav.php' ?>
 
 	<main class="container-fluid text-left bg-grey">
 		<div class="container-slim bg-white">
-		<form method='post' action='processusercreate.php'>
+		<form method='post' action='../process/processusercreate.php'>
 			<h1>Create Account</h1>
 						First Name:
 						<input type="text" name="firstname"><br>
@@ -55,6 +54,6 @@
 		</div>
 	</main>
 
-	<?php include_once 'inc/footer.php' ?>
+	<?php require_once '../inc/footer.php' ?>
 </body>
 </html>

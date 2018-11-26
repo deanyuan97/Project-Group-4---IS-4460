@@ -67,9 +67,9 @@ CREATE TABLE `item` (
 --
 
 INSERT INTO `item` (`id`, `name`, `description`, `price`, `IMG`, `user`, `sold`) VALUES
-(1, 'Hydro Flask', 'Large Water Bottle', '$20.00', 'HydroFlask.jpg', 4, 0),
-(2, 'Back Pack', 'Hiking Back Pack', '$50.00', 'Backpack.jpg', 4, 0),
-(3, 'Hiking Shoes', 'Sturdy Shoes for Hiking', '$60.00', 'HikingShoes.jpg', 4, 0);
+(1, 'Hydro Flask', 'Large Water Bottle', '$20.00', '../images/HydroFlask.jpg', 4, 0),
+(2, 'Back Pack', 'Hiking Back Pack', '$50.00', '../images/Backpack.jpg', 4, 0),
+(3, 'Hiking Shoes', 'Sturdy Shoes for Hiking', '$60.00', '../images/HikingShoes.jpg', 4, 0);
 
 -- --------------------------------------------------------
 

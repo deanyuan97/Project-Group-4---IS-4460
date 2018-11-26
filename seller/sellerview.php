@@ -1,16 +1,15 @@
 <?php session_start();
-if($_SESSION['role'] != 'buyer') header("Location: mainpage.php");
+if($_SESSION['role'] != 'seller') header("Location: ../mainpage.php");
 ?>
 <!doctype html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>All Listings - Outdoor Swap</title>
-	<link rel='stylesheet' href="styles.css">
+<title>My Listings - Outdoor Swap</title>
 
-	<!-- Boot Strap Links -->
+	<!-- Bootstrap Links -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="stylesheet" href="styles.css" >
+	<link rel="stylesheet" href="../styles.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
@@ -19,13 +18,13 @@ if($_SESSION['role'] != 'buyer') header("Location: mainpage.php");
 <body style = "background-color: lightgray;">
 
 <?php
-include_once 'inc/nav.php';
+require_once 'sellernav.php';
 
-require_once 'login.php';
+require_once '../db.php';
 $conn = new mysqli($hn, $un, $pw, $db);
 if ($conn->connect_error) die("Fatal Error");
 
-$query = "SELECT * FROM item WHERE sold=0";
+$query = "SELECT * FROM item WHERE user='".$_SESSION['userid']."' AND sold=0";
 
 $result = $conn->query($query);
 if(!$result) die($conn->error);
@@ -34,7 +33,7 @@ $rows = $result->num_rows;
 
 if(!$rows){ ?>
 	<div class="container-fluid text-center">
-		<h3>No items listed!</h3>
+		<h3>You haven't listed any items yet!</h3>
 	</div>
 <?php } else {
 	for($j=0; $j<$rows; ++$j) {
@@ -47,10 +46,11 @@ echo <<<_END
   <h4>Description: $row[2]</h4>
   <h4>Price: $row[3]</h4>
 	<div class='itembuttons'>
-		<form method='post' action='buyerbuy.php'>
-				<input type='hidden' name='buy' value='yes'>
+		<a href='selleredit.php?id=$row[0]' class="btn btn-success">Edit posting</a>
+		<form method='post' action='sellerdelete.php'>
+				<input type='hidden' name='delete' value='yes'>
 				<input type='hidden' name='itemid' value='$row[0]'>
-				<input type='submit' value='Purchase' class="btn btn-success">
+				<input type='submit' value='Delete posting' class="btn btn-success">
 		</form>
 	</div>
 	<div class='clear'></div>
@@ -60,6 +60,10 @@ _END;
 	}
 }
 ?>
-	<?php include_once 'inc/footer.php' ?>
+
+	<div class="container-fluid text-center">
+			<button type="button"><a href='selleradd.php'>Add a new Posting</a></button>
+	</div>
+	<?php require_once '../inc/footer.php' ?>
 </body>
 </html>

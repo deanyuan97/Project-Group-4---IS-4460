@@ -11,12 +11,12 @@
 
 <body>
 
-	<?php include_once 'inc/nav.php' ?>
+	<?php require_once 'inc/nav.php' ?>
 
 <!-- Login -->
 <main class="container-fluid bg-grey">
 	<div class="container-slim bg-white">
-	<form method='post' action='processlogin.php'>
+	<form method='post' action='process/processlogin.php'>
 		<h3>Login</h3>
 		<div class="row">
 			<div class="col-sm-6 form-group">
@@ -40,6 +40,6 @@
 	</form>
 </main>
 
-<?php include_once 'inc/footer.php' ?>
+<?php require_once 'inc/footer.php' ?>
 </body>
 </html>

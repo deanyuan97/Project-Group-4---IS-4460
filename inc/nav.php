@@ -11,10 +11,10 @@
       <li><a href="mainpage.php#contact">CONTACT</a></li>
       <li class="navbar-text">|</li>
       <?php if((isset($_SESSION['role']) ? $_SESSION['role'] : null) == 'seller') { ?>
-        <li><a href="sellerview.php">MY LISTINGS</a></li>
+        <li><a href="seller/sellerview.php">MY LISTINGS</a></li>
         <li class="navbar-text">|</li>
       <?php } if((isset($_SESSION['role']) ? $_SESSION['role'] : null) == 'buyer') { ?>
-        <li><a href="buyerview.php">ALL LISTINGS</a></li>
+        <li><a href="buyer/buyerview.php">ALL LISTINGS</a></li>
         <li class="navbar-text">|</li>
       <?php } ?>
       <?php if((isset($_SESSION['username']) ? $_SESSION['username'] : null)) { ?>
@@ -22,20 +22,20 @@
           <a class="dropdown-toggle" data-toggle="dropdown" href="#"><?php echo $_SESSION['username'] ?>
           <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="profile.php">Profile</a></li>
+            <li><a href="user/profile.php">Profile</a></li>
             <?php
-            if($_SESSION['role'] == 'buyer') echo "<li><a href='buyerorders.php'>My Orders</a></li>";
-            if($_SESSION['role'] == 'seller') echo "<li><a href='sellersales.php'>My Sales</a></li>";
+            if($_SESSION['role'] == 'buyer') echo "<li><a href='buyer/buyerorders.php'>My Orders</a></li>";
+            if($_SESSION['role'] == 'seller') echo "<li><a href='seller/sellersales.php'>My Sales</a></li>";
             ?>
-            <li><a href="useredit.php">Update Account</a></li>
-            <li><a href="userdelete.php" id='accountdelete'>Delete Account</a></li>
+            <li><a href="user/useredit.php">Update Account</a></li>
+            <li><a href="user/userdelete.php" id='accountdelete'>Delete Account</a></li>
             <li class="divider"></li>
             <li><a href="logout.php">Sign out</a></li>
           </ul>
         </li>
       <?php } else { ?>
         <li><a href='loginpage.php'>LOGIN</a></li>
-        <li><a href='usercreate.php'>CREATE ACCOUNT</a></li>
+        <li><a href='user/usercreate.php'>CREATE ACCOUNT</a></li>
       <?php } ?>
     </ul>
   </div>

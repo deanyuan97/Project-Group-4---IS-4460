@@ -4,18 +4,17 @@
 <head>
 <meta charset="UTF-8">
 <title>Edit Item - Outdoor Swap</title>
-	<link rel='stylesheet' href="styles.css">
 
-	<!-- Boot Strap Links -->
+	<!-- Bootstrap Links -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="stylesheet" href="styles.css" >
+	<link rel="stylesheet" href="../styles.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body style = "background-color: lightgray">
 <?php
-include_once 'inc/nav.php';
-require_once 'login.php';
+require_once 'sellernav.php';
+require_once '../db.php';
 $conn = new mysqli($hn, $un, $pw, $db);
 if ($conn->connect_error) die("Fatal Error");
 
@@ -41,7 +40,7 @@ if(isset($_GET['id'])){
 
 echo <<<_END
 <div class="container-slim text-left bg-white">
-	<form method='post' action='processselleredit.php'>
+	<form method='post' action='../process/processselleredit.php'>
 			Item Name:<input type='text' name='name' value='$name'>
 			Description:<input type='text' name='description' value='$description'>
 			Price:<input type='text' name='price' value='$price'>
@@ -56,7 +55,7 @@ _END;
 	}
 }
 
-include_once 'inc/footer.php'
+require_once '../inc/footer.php'
 ?>
 </body>
 </html>

@@ -38,12 +38,12 @@ require_once 'login.php';
 $conn = new mysqli($hn, $un, $pw, $db);
 if ($conn->connect_error) die("Fatal Error");
 
-if(isset($_GET['itemid'])){
+if(isset($_GET['id'])){
 
-	$itemid = $_GET['itemid'];
+	$id = $_GET['id'];
 
-	$query = "SELECT * FROM item where itemid=$itemid ";
-	$result = $conn->query($query);
+	$query = "SELECT * FROM item where id=$id ";
+	$result = $conn->query($query);	
 	if(!$result) die($conn->error);
 
 	$row_count = $result->num_rows;
@@ -67,34 +67,23 @@ echo <<<_END
 			Image:<input type='text' name='IMG' value='$IMG'>
 			<input type='submit' value='Update Record'>
 			<input type='hidden' name='update' value='update'>
-			<input type='hidden' name='itemid' value='$itemid'>
+			<input type='hidden' name='id' value='$id'>
 	</form>
 	</pre>
 _END;
 
 	if(isset($_POST['update'])){
-	$itemid = $_POST['itemid'];
+	$id = $_POST['id'];
 	$name = $_POST['name'];
 	$description = $_POST['description'];
 	$price = $_POST['price'];
 	$IMG = $_POST['IMG'];
 
-	$query = "UPDATE item set name = '$name', description = '$description', price = '$price', IMG = '$IMG' where itemid=$itemid ";
+	$query = "UPDATE item set name = '$name', description = '$description', price = '$price', IMG = '$IMG' where id=$id ";
 
 
 	$result = $conn->query($query);
 	if (!$result) die($conn->connect_error);
-}
-if(isset($_POST['delete'])){
-
-	$itemid=$_POST['itemid'];
-
-	$query="Delete from item where name='name'";
-
-	$result = $conn->query($query);
-if(!$result) die($conn->error);
-
-
 }
 $conn->close();
 }

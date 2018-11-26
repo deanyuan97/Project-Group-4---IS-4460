@@ -71,7 +71,8 @@ echo <<<_END
 	</form>
 	</pre>
 _END;
-
+}
+}
 	if(isset($_POST['update'])){
 	$id = $_POST['id'];
 	$name = $_POST['name'];
@@ -86,6 +87,6 @@ _END;
 	if (!$result) die($conn->connect_error);
 }
 $conn->close();
-}
-}
+
+
 ?>

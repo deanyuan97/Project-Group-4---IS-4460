@@ -45,6 +45,13 @@ echo <<<_END
   <h4>Name: {$item['name']}</h4>
   <h4>Description: {$item['description']}</h4>
   <h4>Price: {$item['price']}</h4>
+	<div class='itembuttons'>
+		<form method='post' action='buyercancel.php'>
+				<input type='hidden' name='buy' value='yes'>
+				<input type='hidden' name='itemid' value='{$item['id']}'>
+				<input type='submit' value='Cancel' class="btn btn-success">
+		</form>
+	</div>
   <div class='clear'></div>
 </article>
 _END;

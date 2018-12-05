@@ -15,7 +15,7 @@
 
 	<!-- Header -->
 	<div class="jumbotron text-center">
-		<img src='Images/main_image.jpg' width='500' height='300' style="width 50"></img>
+		<img src='images/main_image.jpg' width='500' height='300' style="width 50"></img>
 		<h1>Outdoor Swap</h1>
 		<p>Where adventuers buy and sell</p>
 	</div>
@@ -39,12 +39,12 @@
   <br>
   <div class="row">
     <div class="col-sm-6">
-      <img src='Images/group-camping.jpg'width='500' height='300' style="width 50"></img>
+      <img src='images/group-camping.jpg'width='500' height='300' style="width 50"></img>
       <h4>Group Events</h4>
       <p>Join us for one of our monthly group events</p>
     </div>
     <div class="col-sm-6">
-    <img src='Images/gear-review.jpg'width='500' height='300' style="width 50"></img>
+    <img src='images/gear-review.jpg'width='500' height='300' style="width 50"></img>
       <h4>Gear Reviews</h4>
       <p>Join us at a pop-up gear review near you</p>
     </div>

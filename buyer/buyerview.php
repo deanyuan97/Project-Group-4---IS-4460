@@ -46,6 +46,7 @@ echo <<<_END
   <h4>Description: $row[2]</h4>
   <h4>Price: $row[3]</h4>
 	<div class='itembuttons'>
+		<a href='../review/reviewview.php?id=$row[0]' class="btn btn-success">Seller Reviews</a>
 		<form method='post' action='buyerbuy.php'>
 				<input type='hidden' name='buy' value='yes'>
 				<input type='hidden' name='itemid' value='$row[0]'>
